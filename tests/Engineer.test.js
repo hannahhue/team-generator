@@ -14,7 +14,7 @@ describe("Engineer", () => {
         "hannah",
         "2",
         "alicia9790972@gmail.com",
-        "employee",
+        "engineer",
         "hannahhue"
       )
     ).toEqual(obj);
