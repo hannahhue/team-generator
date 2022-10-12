@@ -1,3 +1,3 @@
-const { start } = require("./lib/questions");
+const { start } = require("./src/questions");
 
 start();

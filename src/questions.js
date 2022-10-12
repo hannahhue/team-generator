@@ -1,9 +1,10 @@
 //grabbing classes
 const inquirer = require("inquirer");
-const Employee = require("./Employee");
-const Engineer = require("./Engineer");
-const Intern = require("./Intern");
-const Manager = require("./Manager");
+const Employee = require("../lib/Employee");
+const Engineer = require("../lib/Engineer");
+const Intern = require("../lib/Intern");
+const Manager = require("../lib/Manager");
+const { generateHtml } = require("./input");
 const employees = [];
 
 //gives two options of employee type when adding new employee
@@ -21,7 +22,7 @@ const managerPrompt = [
   {
     type: "input",
     message: "What is your Managers name?",
-    name: "employeeName",
+    name: "name",
   },
   {
     type: "input",
@@ -56,7 +57,7 @@ const engineerPrompt = [
   {
     type: "input",
     message: "What is your name?",
-    name: "employeeName",
+    name: "name",
   },
   {
     type: "input",
@@ -86,7 +87,7 @@ const internPrompt = [
   {
     type: "input",
     message: "What is your name?",
-    name: "employeeName",
+    name: "name",
   },
   {
     type: "input",
@@ -185,8 +186,5 @@ function internInput() {
     }
   });
 }
-
-//creating fs.writeee html thingy
-function generateHtml(response) {}
 
 module.exports = { start };
