@@ -129,7 +129,7 @@ function start() {
     if (response.continue === "Yes") {
       nextEmployee();
     } else {
-      generateHtml();
+      generateHtml(employees);
     }
   });
 }
@@ -161,7 +161,7 @@ function engineerInput() {
     if (response.continue === "Yes") {
       nextEmployee();
     } else {
-      generateHtml();
+      generateHtml(employees);
     }
   });
 }
@@ -182,7 +182,7 @@ function internInput() {
     if (response.continue === "Yes") {
       nextEmployee();
     } else {
-      generateHtml();
+      generateHtml(employees);
     }
   });
 }

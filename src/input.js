@@ -1,10 +1,12 @@
 const Manager = require("../lib/Manager");
 const fs = require("fs");
+let employeeString = ``;
 
 //creating fs.writeee html thingy
-function generateHtml(response) {
+function generateHtml(employees) {
+  buildCard(employees);
   fs.writeFile(
-    "index.html",
+    "./dist/index.html",
     `<!DOCTYPE html>
         <html lang="en">
         <head>
@@ -24,7 +26,7 @@ function generateHtml(response) {
           <span class="navbar-brand mb-0 h1">Team Generator!</span>
         </div>
         </nav>
-        ${buildCard}
+        ${employeeString}
         </body>
         </html>`,
 
@@ -32,8 +34,7 @@ function generateHtml(response) {
   );
 }
 
-function buildCard() {
-  let employeeString = ``;
+function buildCard(employees) {
   employees.forEach((employee) => {
     if (employee.role === "Manager") {
       employeeString += `<div class="card" style="width: 18rem;">
@@ -83,8 +84,6 @@ function buildCard() {
             </div>`;
     }
   });
-
-  return employeeString;
 }
 
 module.exports = { generateHtml };
