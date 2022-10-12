@@ -1,0 +1,17 @@
+* {
+    font-family: 'Noto Sans Mono', monospace;
+}
+
+body {
+    background-color: pink;
+  }
+  
+.card {
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    display: inline-flex;
+    display: center;
+    margin-top: 20px;
+}
+

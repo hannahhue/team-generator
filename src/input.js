@@ -3,8 +3,12 @@ const fs = require("fs");
 let employeeString = ``;
 
 //creating fs.writeee html thingy
+//pulls info from string into literal
 function generateHtml(employees) {
+  //pulling each chosen card
+  //puts each card into following ${}
   buildCard(employees);
+  //create new html
   fs.writeFile(
     "./dist/index.html",
     `<!DOCTYPE html>
@@ -18,7 +22,8 @@ function generateHtml(employees) {
          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
          />
         <link>
-        <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+        <title>Team Gen</title>
         </head>
         <body>
         <nav class="navbar bg-light">
@@ -34,6 +39,7 @@ function generateHtml(employees) {
   );
 }
 
+//decides what kind of card to make then fills in blanks
 function buildCard(employees) {
   employees.forEach((employee) => {
     if (employee.role === "Manager") {
@@ -43,9 +49,9 @@ function buildCard(employees) {
               <h5 class="card-title">Manager</h5>
              </div>
              <ul class="list-group list-group-flush">
-              <li class="list-group-item">${employee.name}</li>
-              <li class="list-group-item">${employee.id}</li>
-              <li class="list-group-item">${employee.officeNum}</li>
+              <li class="list-group-item">Name: ${employee.name}</li>
+              <li class="list-group-item">ID: ${employee.id}</li>
+              <li class="list-group-item">Office Number: ${employee.officeNum}</li>
              </ul>
              <div class="card-body">
              <a href="mailto:${employee.email}" class="card-link">${employee.email}</a>
@@ -58,9 +64,8 @@ function buildCard(employees) {
                <h5 class="card-title">Engineer</h5>
              </div>
              <ul class="list-group list-group-flush">
-              <li class="list-group-item">${employee.name}</li>
-              <li class="list-group-item">${employee.id}</li>
-              <li class="list-group-item"> <a href= "https://github.com/${employee.github}"></a></li>
+              <li class="list-group-item">Name: ${employee.name}</li>
+              <li class="list-group-item">ID: ${employee.id}</li>
              </ul>
              <div class="card-body">
                 <a href="mailto:${employee.email}" class="card-link">${employee.email}</a>
@@ -74,9 +79,9 @@ function buildCard(employees) {
               <h5 class="card-title">Intern</h5>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">${employee.name}</li>
-              <li class="list-group-item">${employee.id}</li>
-              <li class="list-group-item">${employee.school}</li>
+              <li class="list-group-item">Name: ${employee.name}</li>
+              <li class="list-group-item">ID: ${employee.id}</li>
+              <li class="list-group-item">School: ${employee.school}</li>
             </ul>
             <div class="card-body">
             <a href="mailto:${employee.email}" class="card-link">${employee.email}</a>
