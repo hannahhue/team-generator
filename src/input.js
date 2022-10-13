@@ -22,7 +22,7 @@ function generateHtml(employees) {
          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
          />
         <link>
-        <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+        <link rel="stylesheet" type="text/css" href="./style.css" />
         <title>Team Gen</title>
         </head>
         <body>
